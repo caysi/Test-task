@@ -1,0 +1,11 @@
+# Enable all errors
+php_value display_errors on
+php_value error_reporting 2047
+
+# Enable RewriteRule
+RewriteEngine on
+RewriteBase /
+
+RewriteCond  %{REQUEST_URI}  !^/static|test.php
+
+RewriteRule ^(.*)$ index.php?r=$1 [L,QSA]
